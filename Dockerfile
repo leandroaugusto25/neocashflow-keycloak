@@ -18,14 +18,11 @@ ENV KC_HTTP_ENABLED=true
 ENV KC_PROXY=edge
 
 # Porta dinâmica no Heroku
-ENV KC_HTTP_PORT=${PORT}
+ENV KC_HTTP_PORT=8080
 
 # Credenciais administrativas do Keycloak
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
-
-# Porta padrão para desenvolvimento
-EXPOSE 8080
 
 WORKDIR /opt/keycloak
 
@@ -34,6 +31,9 @@ COPY themes/neocashflow /opt/keycloak/themes/neocashflow
 # Build do Keycloak
 RUN /opt/keycloak/bin/kc.sh build
 
+# Expor porta
+EXPOSE 8080
+
 # Comando de inicialização
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start-dev", "--http-port=${PORT}"]
+CMD ["start-dev", "--http-port=8080"]
