@@ -7,9 +7,9 @@ ENV KC_METRICS_ENABLED=true
 
 # Configurar um banco de dados externo
 ENV KC_DB=postgres
-ENV KC_DB_URL=jdbc:postgresql://db.kdhwuactirwazrixorku.supabase.co:5432/postgres
+ENV KC_DB_URL=jdbc:postgresql://hopper.proxy.rlwy.net:41793/railway
 ENV KC_DB_USERNAME=postgres
-ENV KC_DB_PASSWORD=0cp9VF03jIanw0Jo
+ENV KC_DB_PASSWORD=yaAtKBhDBvCDynaKraZgkHByksRHxKRy
 
 # Configurações de hostname e proxy
 ENV KC_HOSTNAME_STRICT=false
