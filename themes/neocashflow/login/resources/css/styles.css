@@ -1,0 +1,283 @@
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #555658, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Wrapper para centralização */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+}
+
+/* Container Principal */
+.login-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animação de Entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.login-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Conteúdo */
+.login-content {
+    padding: 10px 0;
+}
+
+/* Seleção de Idioma */
+.locale-selector {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.locale-selector select {
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Alertas */
+.alert {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.alert.error {
+    background: #ffe6e6;
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+}
+
+.alert.success {
+    background: #e6ffe6;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Instruções (specific to reset password) */
+.instructions {
+    font-size: 13px;
+    color: #777;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* Opções do Formulário (login) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 6px;
+}
+
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Login Social */
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.social-providers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-button {
+    padding: 10px 20px;
+    background: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.social-button:hover {
+    background: #e0e0e0;
+}
+
+/* Registro e Voltar ao Login */
+.register, .back-to-login {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register a, .back-to-login a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register a:hover, .back-to-login a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .social-button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .instructions {
+        font-size: 12px;
+    }
+}
