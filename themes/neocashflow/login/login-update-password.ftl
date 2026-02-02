@@ -11,7 +11,7 @@
     <div class="login-wrapper">
         <div class="login-container">
             <header class="login-header">
-                <img src="${url.resourcesPath}/img/logo.jpeg" alt="Logo" class="logo" />
+                <img src="${url.resourcesPath}/img/levirtus.png" alt="Logo" class="logo" />
                 <h1>${msg("updatePasswordTitle", realm.displayName)}</h1>
             </header>
 
