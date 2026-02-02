@@ -20,21 +20,6 @@
         </header>
 
         <div class="auth-content">
-
-            <#if realm.internationalizationEnabled && locale.supported?size gt 1>
-                <div class="locale-selector">
-                    <form id="kc-locale-form" action="${url.loginUrl}" method="post">
-                        <select name="locale" onchange="this.form.submit()">
-                            <#list locale.supported as l>
-                                <option value="${l}">
-                                    ${l}
-                                </option>
-                            </#list>
-                        </select>
-                    </form>
-                </div>
-            </#if>
-
             <#if message?has_content>
                 <div class="alert alert-${message.type}">
                     ${kcSanitize(message.summary)?no_esc}
