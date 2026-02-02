@@ -23,7 +23,7 @@
 
             <#if realm.internationalizationEnabled && locale.supported?size gt 1>
                 <div class="locale-selector">
-                    <form id="kc-locale-form" action="${url.loginRestartLoginUrl}" method="post">
+                    <form id="kc-locale-form" action="${url.loginUrl}" method="post">
                         <select name="locale" onchange="this.form.submit()">
                             <#list locale.supported as l>
                                 <option value="${l.locale}"<#if locale.current == l.locale> selected</#if>>
