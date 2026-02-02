@@ -26,8 +26,8 @@
                     <form id="kc-locale-form" action="${url.loginUrl}" method="post">
                         <select name="locale" onchange="this.form.submit()">
                             <#list locale.supported as l>
-                                <option value="${l.locale}"<#if locale.current == l.locale> selected</#if>>
-                                    ${l.label}
+                                <option value="${l}">
+                                    ${l}
                                 </option>
                             </#list>
                         </select>
