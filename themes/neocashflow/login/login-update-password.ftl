@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +7,55 @@
     <title>${msg("updatePasswordTitle", realm.displayName)}</title>
     <link rel="stylesheet" href="${url.resourcesPath}/css/styles.css" />
 </head>
-<body>
-    <div class="login-wrapper">
-        <div class="login-container">
-            <header class="login-header">
-                <img src="${url.resourcesPath}/img/levirtus.png" alt="Logo" class="logo" />
-                <h1>${msg("updatePasswordTitle", realm.displayName)}</h1>
-            </header>
 
-            <div class="login-content">
-                <#if realm.internationalizationEnabled && locale.supported?size gt 1>
-                    <div class="locale-selector">
-                        <select id="kc-locale" name="locale" onchange="document.getElementById('kc-locale-form').submit()">
-                            <#list locale.supported as l>
-                                <option value="${l.locale}"<#if locale.current == l.locale> selected="selected"</#if>>${l.label}</option>
-                            </#list>
-                        </select>
-                        <form id="kc-locale-form" action="${url.loginRestartLoginUrl}" method="post">
-                            <input type="hidden" name="locale" value="" />
-                        </form>
-                    </div>
-                </#if>
+<body class="neocastflow-bg">
 
-                <#if message?has_content>
-                    <div class="alert ${message.type}">
-                        <span class="alert-icon">⚠</span> ${kcSanitize(message.summary)?no_esc}
-                    </div>
-                </#if>
+<div class="auth-wrapper">
+    <div class="auth-card">
 
-                <form id="kc-form-update-password" action="${url.loginAction}" method="post">
-                    <div class="form-group">
-                        <label for="password-new">${msg("passwordNew")}</label>
-                        <input type="password" id="password-new" name="password-new" placeholder="${msg('passwordNew')}" required />
-                    </div>
+        <header class="auth-header">
+            <img src="${url.resourcesPath}/img/levirtus.png" class="auth-logo" />
+            <h1 class="auth-title">${msg("updatePasswordTitle", realm.displayName)}</h1>
+        </header>
 
-                    <div class="form-group">
-                        <label for="password-confirm">${msg("passwordConfirm")}</label>
-                        <input type="password" id="password-confirm" name="password-confirm" placeholder="${msg('passwordConfirm')}" required />
-                    </div>
+        <div class="auth-content">
 
-                    <div class="form-options">
-                        <div class="checkbox-wrapper">
-                            <label class="remember-me">
-                                <input type="checkbox" id="logout-other-devices" name="logoutOtherDevices" value="true" />
-                                ${msg("logoutOtherDevices")}
-                            </label>
-                        </div>
-                    </div>
+            <#if message?has_content>
+                <div class="alert alert-${message.type}">
+                    ${kcSanitize(message.summary)?no_esc}
+                </div>
+            </#if>
 
-                    <button type="submit" id="kc-update-password" class="primary-button">${msg("doSubmit")}</button>
-                </form>
-            </div>
+            <form action="${url.loginAction}" method="post" class="auth-form">
 
-            <footer class="login-footer">
-                <p>© 2025 - ESCOLA DE SABERES PÚBLICOS DO AMAPÁ</p>
-            </footer>
+                <div class="form-group">
+                    <label for="password-new">${msg("passwordNew")}</label>
+                    <input type="password" id="password-new" name="password-new" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="password-confirm">${msg("passwordConfirm")}</label>
+                    <input type="password" id="password-confirm" name="password-confirm" required />
+                </div>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="logoutOtherDevices" value="true" />
+                    ${msg("logoutOtherDevices")}
+                </label>
+
+                <button type="submit" class="btn-primary">
+                    ${msg("doSubmit")}
+                </button>
+            </form>
+
         </div>
+
+        <footer class="auth-footer">
+            © 2025 · NeoCastFlow
+        </footer>
+
     </div>
+</div>
+
 </body>
 </html>
